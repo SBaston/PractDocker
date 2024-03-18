@@ -36,5 +36,7 @@ volumes:
 
 # Servicio MySQL #
 - image: mysql:5.7 --> Se utiliza la versión más reciente de mysql
-- environment: MYSQL_DATABASE: 'drupal' MYSQL_USER: 'drupal' MYSQL_PASSWORD: 'password' MYSQL_ROOT_PASSWORD: 'root_password' --> Se establece las variables de entorno de nuestro servicio
+- environment: MYSQL_DATABASE: 'drupal' MYSQL_USER: 'drupal' MYSQL_PASSWORD: 'password' MYSQL_ROOT_PASSWORD: 'root_password' --> Se establecen las variables de entorno de nuestro servicio
 - volumes: - mysql_data:/var/lib/mysql --> Se establece que la información de nuestro servicio se guarde en el directorio /var/lib/mysql del container en el que se ejecuta
+![image](https://github.com/SBaston/PractDocker/assets/101277911/8163f91f-c0a1-42b5-9863-aff06dc28b29)
+
