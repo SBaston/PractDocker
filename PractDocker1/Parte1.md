@@ -28,3 +28,18 @@ volumes:
   drupal_data:
   mysql_data:
 ```
+# Servicio Drupal #
+image:drupal --> Utilizamos la versión más reciente de drupal
+ports: - "81:80" --> Se establece el puerto 81 de localhost para este servicio y se mapea al puerto 80 del container en el que se corre
+volumes: - drupal_data:/var/www/html  --> Se establece que la información de nuestro servicio se guarde en el directorio /var/www/html del container en el que se ejecuta
+depends_on: - mysql --> Se ejecuta primero el servicio mysql ya que drupal depende de él
+
+# Servicio MySQL #
+ image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: 'drupal'
+      MYSQL_USER: 'drupal'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'root_password'
+    volumes:
+      - mysql_data:/var/lib/mysql
